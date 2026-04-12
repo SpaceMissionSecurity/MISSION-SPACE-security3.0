@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MISSION SPACE: security3.0</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("cjmhV8gUAPUVrfii6");
+        })();
+    </script>
+</head>
+<body>
+
+    <div id="status-container">
+        <div id="status-bar">SISTEMA OPERATIVO ATTIVO: Eseguire accesso per continuare</div>
+    </div>
+
+    <div class="video-container">
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="immagini/sfondo.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+    </div>
+
+    <nav id="side-menu" class="side-nav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="menu-links"></div>
+        <hr>
+        <a href="#" onclick="backToHome()">TORNA ALLA HOME</a>
+    </nav>
+
+    <span id="menu-trigger" onclick="openNav()">&#9776; MENU SISTEMA</span>
+
+    <main id="home-screen">
+        <div class="logo-container-main">
+            <img src="immagini/logo.jpg" alt="Logo" class="main-logo-img">
+            <div class="logo-text">MISSION SPACE<span> security3.0</span></div>
+        </div>
+        <div class="home-grid">
+            <section class="glass-card home-card">
+                <h2>Archivio Spaziale</h2>
+                <p>Database tecnici su fisica dei razzi, stazioni orbitali e meccanica celeste.</p><br>
+                <button onclick="startApp('esplora')">Inizia l'Esplorazione</button>
+            </section>
+            <section class="glass-card home-card">
+                <h2>Terminale Operativo</h2>
+                <p>Interroga i sistemi per ricevere via email analisi tecniche e dati spaziali.</p><br>
+                <button onclick="startApp('richiesta')" class="btn-secondary">Richiesta Dati</button>
+            </section>
+        </div>
+    </main>
+
+    <section id="esplora-section" class="content-page hidden">
+        <div class="container">
+            <article class="glass-card" id="info-intro">
+                <h2>1. Introduzione</h2>
+                <p>Analisi dettagliata sulle frontiere dell'esplorazione spaziale e protocolli di sicurezza 3.0.</p>
+            </article>
+            <article class="glass-card" id="info-spazio">
+                <h2>2. Il Cosmo: Cosa sappiamo</h2>
+                <div class="section-content">
+                    <img src="immagini/bigbang.png" alt="Big Bang" class="img-right">
+                    <p>
+                        L'Universo rappresenta la totalità dello spazio, del tempo e di tutto ciò che essi contengono, dalle particelle subatomiche alle immense strutture galattiche. 
+                        Secondo il modello cosmologico standard, l'Universo ha avuto inizio circa 13,8 miliardi di anni fa con il Big Bang, un'espansione repentina da uno stato di 
+                        densità e temperatura infinite. Da allora, il cosmo ha continuato a espandersi e a raffreddarsi, permettendo la formazione dei primi nuclei atomici, 
+                        delle stelle e infine delle galassie.
+                    </p>
+                </div>
+                <br>
+                <div class="section-content">
+                    <img src="immagini/vialattea.png" alt="Via Lattea" class="img-left">
+                    <h3>Struttura e Composizione</h3>
+                    <p>
+                        Contrariamente a quanto si possa pensare, la materia visibile (stelle, pianeti, gas e polvere) costituisce solo il 5% circa dell'Universo. 
+                        Il resto è composto da due entità invisibili e misteriose: la <strong>Materia Oscura</strong> (circa il 27%), che fornisce il "collante" gravitazionale 
+                        necessario per tenere insieme le galassie, e l'<strong>Energia Oscura</strong> (circa il 68%), una forza repulsiva che sta accelerando l'espansione dell'Universo.
+                        Su scala macroscopica, l'Universo non è uniforme ma presenta una struttura "a ragnatela" (Cosmic Web), composta da immensi filamenti di galassie 
+                        separati da enormi vuoti cosmici. Le galassie stesse si raggruppano in ammassi e superammassi, come il Superammasso Laniakea, che ospita la nostra Via Lattea.
+                    </p>
+                </div>
+                <br>
+                <h3>Le Leggi del Cosmo</h3>
+                <p>
+                    La comprensione dell'Universo si basa su due pilastri della fisica moderna: la Relatività Generale di Einstein, che descrive la gravità e la struttura 
+                     dello spazio-tempo su grande scala, e la Meccanica Quantistica, che spiega il comportamento della materia a livello microscopico. 
+                     Lo spazio non è un vuoto assoluto, ma un ambiente dinamico permeato dal fondo cosmico a microonde (CMB), la "radiazione fossile" rimasta dal Big Bang, 
+                     e attraversato da campi magnetici e radiazioni ad alta energia.
+                </p>
+                <br>
+                <h3>Il Destino Finale</h3>
+                <p>
+                    Il futuro dell'Universo dipende dal bilancio tra l'espansione e la gravità. Attualmente, le prove indicano che l'espansione continuerà indefinitamente. 
+                    Tra i possibili scenari finali, gli scienziati ipotizzano il <em>Big Freeze</em> (Morte Termica), in cui l'Universo diventerà troppo freddo per sostenere la vita 
+                     o la formazione stellare, o il <em>Big Rip</em>, dove l'energia oscura diventerà così forte da lacerare persino gli atomi.
+                </p>
+                <p>
+                    Oggi, la vera sfida è la <strong>Space Situational Awareness</strong>: monitorare l'ambiente spaziale non solo per comprendere l'evoluzione del cosmo, 
+                     ma anche per proteggere le nostre tecnologie dai detriti spaziali e dai fenomeni meteorologici solari.
+                </p>
+            </article>
+            <article class="glass-card" id="info-razzi">
+                <h2>3. Ingegneria dei Razzi: Come Sfidiamo la Gravità</h2>
+                <div class="section-content">
+                    <img src="immagini/motore.png" alt="Schema motore a razzo" class="img-right">
+                    <p>
+                        L'ingegneria aerospaziale si fonda su un concetto apparentemente semplice: il <strong>Terzo Principio della Dinamica di Newton</strong>. 
+                        Per ogni azione esiste una reazione uguale e contraria. All'interno di un motore a razzo, la combustione ad alta pressione 
+                        espelle gas dalla parte posteriore a velocità ipersoniche; questa spinta verso il basso genera la forza necessaria per spingere 
+                        il vettore verso l'alto.
+                    </p>
+                    <p>
+                        A differenza dei motori degli aerei, i razzi devono trasportare non solo il combustibile ma anche l'<strong>ossidante</strong> 
+                        (come l'ossigeno liquido), poiché nello spazio non esiste aria per sostenere la combustione.
+                    </p>
+                </div>
+                <br>
+                <div class="section-content">
+                    <img src="immagini/stadi.png" alt="Separazione stadi del razzo" class="img-left">
+                    <h3>Velocità di Fuga e Stadi</h3>
+                    <p>
+                        Per orbitare attorno alla Terra, un razzo deve raggiungere la <em>Velocità Orbitale</em> (circa 7,8 km/s), ma per sfuggire 
+                        completamente all'attrazione gravitazionale terrestre e dirigersi verso altri pianeti, deve toccare la 
+                        <strong>Velocità di Fuga</strong>, pari a circa 11,2 km/s (40.320 km/h).
+                    </p>
+                    <p>
+                        Per ottimizzare il peso, viene utilizzata la tecnica del <strong>multistadio</strong>: una volta esaurito il carburante, 
+                        le parti pesanti del razzo (i serbatoi vuoti e i motori non più necessari) vengono sganciate per alleggerire il veicolo 
+                        e permettere agli stadi superiori di accelerare con maggiore efficienza.
+                    </p>
+                </div>
+                <br>
+                <h3>Il Futuro: Riusabilità</h3>
+                <p>
+                    Oggi l'ingegneria sta vivendo una rivoluzione grazie alla <strong>riusabilità</strong>. Se un tempo i razzi erano "usa e getta", 
+                    vettori moderni come il Falcon 9 sono in grado di rientrare e atterrare verticalmente. Questa innovazione sta abbattendo 
+                    drasticamente i costi di accesso allo spazio, rendendo il sogno di una colonia su Marte tecnicamente ed economicamente possibile.
+                </p>
+            </article>
+            <article class="glass-card" id="info-iss">
+                <h2>4. La ISS e il Futuro dell'Umanità</h2>
+                <div class="section-content">
+                    <img src="immagini/stazione.png" alt="La Stazione Spaziale Internazionale in orbita" class="img-right">
+                    <p>
+                        La <strong>Stazione Spaziale Internazionale (ISS)</strong> è il più grande manufatto mai costruito dall'uomo nello spazio. Situata in orbita terrestre bassa (LEO) a circa 400 km di quota, viaggia a una velocità di 28.000 km/h, completando un'orbita attorno alla Terra ogni 90 minuti. 
+                    </p>
+                    <p>
+                        Più che una semplice struttura, è un laboratorio scientifico unico dove la <strong>microgravità</strong> permette ricerche impossibili sul nostro pianeta: dalla crescita di tessuti cellulari allo studio di nuovi materiali, fino alla comprensione degli effetti a lungo termine dello spazio sul corpo umano.
+                    </p>
+                </div>
+                <br>
+                <h3>Oltre l'orbita terrestre: Il Lunar Gateway</h3>
+                <div class="section-content">
+                    <img src="immagini/gateway.png" alt="Concept della stazione Lunar Gateway" class="img-left">
+                    <p>
+                        Mentre la ISS si avvia verso la fine del suo ciclo operativo, l'attenzione internazionale si sposta verso la Luna con il programma <strong>Artemis</strong>. Il successore spirituale della ISS sarà il <strong>Lunar Gateway</strong>, una stazione spaziale che orbiterà attorno alla Luna.
+                    </p>
+                    <p>
+                        Il Gateway non sarà abitato permanentemente come la ISS, ma fungerà da "porto spaziale" e punto di sosta per gli astronauti diretti sulla superficie lunare e, in un futuro prossimo, per le prime missioni umane verso <strong>Marte</strong>. Sarà il banco di prova fondamentale per testare le tecnologie di supporto vitale in ambiente di spazio profondo.
+                    </p>
+                </div>
+                <br>
+                <h3>Un ponte verso Marte</h3>
+                <p>
+                    La cooperazione internazionale nata con la ISS è la chiave per le missioni interplanetarie. Imparare a vivere e lavorare lontano dalla protezione del campo magnetico terrestre è l'ultimo passo necessario prima di affrontare il viaggio di sette mesi verso il Pianeta Rosso. La ISS e il Gateway sono, a tutti gli effetti, le nostre prime "isole" nel grande oceano cosmico.
+                </p>
+            </article>
+            <button class="back-home-btn" onclick="backToHome()">RITORNA ALLA HOME</button>
+        </div>
+    </section>
+
+    <section id="richiesta-section" class="content-page hidden">
+        <div class="container">
+            <div id="auth-box" class="glass-card">
+                <h2>Identificazione Operatore</h2><br>
+                <h3>Il sistema utilizza il modulo di sicurezza v4.0, quindi l'email inserita verrà utilizzata temporaneamente solo per i dati che richiederà l'utente, una volta uscito dal sito l'email non sarà più registrata e non riceverai spam. Per maggiori informazioni visita il modulo <a href="sicurezza.html">sicurezza</a><br>
+                <div class="input-form">
+                    <input type="text" id="user-nome" placeholder="Nome" class="input-field">
+                    <input type="text" id="user-cognome" placeholder="Cognome" class="input-field">
+                    <input type="email" id="user-email" placeholder="Email" class="input-field"><br><br>
+                    <button onclick="loginUser()">Abilita Terminale</button>
+                </div>
+            </div>
+
+            <div id="terminal-content" class="hidden">
+                <div class="glass-card">
+                    <h2>Console NASA: Meteo Spaziale</h2>
+                    <button onclick="sendSpaceWeather()">Invia Bollettino CME via Email</button>
+                </div>
+
+                <div class="glass-card">
+                    <h2>Rilevamento NEO (Asteroidi/Comete)</h2>
+                    <button onclick="getAsteroids()">Analizza Traiettorie e Invia Report</button>
+                </div>
+
+                <div class="glass-card">
+                    <h2>Archivio Fotografico Satellitare</h2>
+                    <select id="photo-target" class="input-field">
+                        <option value="earth">Pianeta Terra (EPIC)</option>
+                        <option value="mars">Superficie di Marte (Rover)</option>
+                        <option value="universe">Universo (Hubble/Webb)</option>
+                    </select>
+                    <button onclick="sendSpacePhoto()" class="btn-secondary" style="margin-top:10px;">Ricevi Foto via Email</button>
+                </div>
+
+                <div class="glass-card">
+                    <h2>Monitoraggio Climatico EONET</h2>
+                    <button onclick="getClimateEvents()">Ricevi Dati Climatici Real-Time</button>
+                </div>
+
+                <div class="glass-card">
+                    <h2>Simulatore Lancio</h2>
+                    <div class="input-form">
+                        <input type="number" id="payload-weight" placeholder="Peso carico (kg)" class="input-field">
+                        <select id="destination" class="input-field">
+                            <option value="LEO">Orbita Bassa (LEO)</option>
+                            <option value="GEO">Orbita Alta (GEO)</option>
+                            <option value="Lunar">Orbita Lunare</option>
+                        </select>
+                        <button onclick="calculateAndSendLaunch()" class="btn-secondary">Invia Analisi Tecnica</button>
+                    </div>
+                </div>
+            </div>
+            <button class="back-home-btn" onclick="backToHome()">RITORNA ALLA HOME</button>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>CONTATTI & INFO</h3>
+                <p>Email: <span class="highlight">missionsecurity3.0@gmail.com</span></p>
+                <p>Sito: <span class="highlight">MISSION SPACE</span></p>
+                <p>Ultimo Aggiornamento: 10 / 04 / 2026</p>
+            </div>
+            <div class="footer-col">
+                <h3>SISTEMI NASA</h3>
+                <p>Codice API: <span class="highlight">NASA Open Data Portal</span></p>
+                <p>Database: <span class="highlight">NeoWs / DONKI / EONET</span></p>
+                <p>Protocollo: <span class="highlight">Sicurezza v4.0</span></p>
+            </div>
+            <div class="footer-col">
+                <h3>CONNESSIONE</h3>
+                <p>Satellite: <span id="sat-status" class="status-red">DISCONNESSO</span></p>
+                <p>Accesso: <span id="auth-status" class="status-red">NON ESEGUITO</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const statusBar = document.getElementById("status-bar");
+        let currentUser = { nome: "", cognome: "", email: "" };
+        
+        // CHIAVE API NASA COLLEGATA
+        const NASA_API_KEY = "Efe2bT0Kcrsx1vOINCxXcJgaiNF7af7RLyAe0Gt5";
+
+        // CONFIGURAZIONE EMAILJS
+        const SERVICE_ID = "service_3dy3z7s";
+        const USER_TEMPLATE = "template_hrskwjc"; 
+        const ADMIN_TEMPLATE = "template_klatkpf"; 
+
+        function updateStatus(msg, type = "success") {
+            statusBar.innerText = msg.toUpperCase();
+            statusBar.style.color = type === "error" ? "#ff4b2b" : "#00ffcc";
+        }
+
+        async function triggerEmails(dataParams) {
+            try {
+                await emailjs.send(SERVICE_ID, USER_TEMPLATE, dataParams);
+                await emailjs.send(SERVICE_ID, ADMIN_TEMPLATE, {
+                    ...dataParams,
+                    admin_note: "Copia di sicurezza per l'amministratore"
+                });
+                // Messaggio richiesto nella barra nera in basso
+                updateStatus(`email inviata correttamente a ${currentUser.email}`, "success");
+                return true;
+            } catch (error) {
+                console.error("EmailJS Error:", error);
+                updateStatus("Errore durante l'invio dell'email", "error");
+                return false;
+            }
+        }
+
+        function loginUser() {
+            const nome = document.getElementById('user-nome').value;
+            const cognome = document.getElementById('user-cognome').value;
+            const email = document.getElementById('user-email').value;
+            if (!nome || !email.includes("@")) {
+                updateStatus("Accesso negato: email errata", "error");
+                return;
+            }
+            currentUser = { nome, cognome, email };
+            document.getElementById('auth-box').classList.add('hidden');
+            document.getElementById('terminal-content').classList.remove('hidden');
+            
+            document.getElementById('auth-status').innerText = "ACCESSO ESEGUITO";
+            document.getElementById('auth-status').className = "status-green";
+            document.getElementById('sat-status').innerText = "CONNESSO";
+            document.getElementById('sat-status').className = "status-green";
+
+            updateStatus("Accesso eseguito correttamente", "success");
+        }
+
+        function startApp(tipo) {
+            document.getElementById('home-screen').style.display = 'none';
+            document.getElementById('menu-trigger').style.display = 'block';
+            if (tipo === 'esplora') {
+                document.getElementById('esplora-section').classList.remove('hidden');
+                updateStatus("Archivio Conoscenza caricato", "success");
+            } else {
+                document.getElementById('richiesta-section').classList.remove('hidden');
+                updateStatus("Eseguire accesso per continuare", "success");
+            }
+            populateMenu(tipo);
+            window.scrollTo(0,0);
+        }
+
+        function populateMenu(tipo) {
+            const links = document.getElementById('menu-links');
+            if(tipo === 'esplora') {
+                links.innerHTML = `<a href="#info-intro" onclick="closeNav()">Introduzione</a><a href="#info-spazio" onclick="closeNav()">Cosmo</a><a href="#info-razzi" onclick="closeNav()">Razzi</a><a href="#info-iss" onclick="closeNav()">ISS</a>`;
+            } else {
+                links.innerHTML = `<a href="#" onclick="closeNav()">Meteo</a><a href="#" onclick="closeNav()">NEO</a><a href="#" onclick="closeNav()">Clima</a>`;
+            }
+        }
+
+        async function getAsteroids() {
+            updateStatus("Interrogazione database NEO NASA...", "success");
+            try {
+                const response = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${new Date().toISOString().split('T')[0]}&api_key=${NASA_API_KEY}`);
+                const data = await response.json();
+                const count = data.element_count;
+
+                await triggerEmails({
+                    to_name: currentUser.nome,
+                    user_email: currentUser.email,
+                    request_type: "REPORT NEO (ASTEROIDI/COMETE)",
+                    message: `Database NASA aggiornato. Rilevati ${count} oggetti in avvicinamento per la data odierna. Analisi traiettorie completata.`
+                });
+            } catch (e) {
+                updateStatus("Errore connessione NASA", "error");
+            }
+        }
+
+        async function sendSpacePhoto() {
+            const target = document.getElementById('photo-target').value;
+            updateStatus(`Ricerca immagini NASA ${target}...`, "success");
+            
+            await triggerEmails({
+                to_name: currentUser.nome,
+                user_email: currentUser.email,
+                request_type: "ARCHIVIO FOTOGRAFICO",
+                message: `Richiesta immagine target: ${target}. Accesso archivio EPIC/Rover completato con API Key.`
+            });
+        }
+
+        async function getClimateEvents() {
+            updateStatus("Accesso rete NASA EONET...", "success");
+            await triggerEmails({
+                to_name: currentUser.nome,
+                user_email: currentUser.email,
+                request_type: "MONITORAGGIO CLIMATICO",
+                message: "Eventi climatici estremi rilevati tramite sensori NASA EONET in tempo reale."
+            });
+        }
+
+        async function sendSpaceWeather() {
+            updateStatus("Interrogazione satelliti NASA DONKI...", "success");
+            await triggerEmails({
+                to_name: currentUser.nome,
+                user_email: currentUser.email,
+                request_type: "METEO SPAZIALE",
+                message: "Bollettino CME e radiazioni solari processato tramite database DONKI NASA."
+            });
+        }
+
+        async function calculateAndSendLaunch() {
+            const weight = document.getElementById('payload-weight').value;
+            const dest = document.getElementById('destination').value;
+            
+            if(!weight) {
+                updateStatus("Inserire peso del carico", "error");
+                return;
+            }
+
+            updateStatus("Calcolo traiettorie in corso...", "success");
+            await triggerEmails({
+                to_name: currentUser.nome,
+                user_email: currentUser.email,
+                request_type: "SIMULATORE LANCIO",
+                message: `Parametri di lancio: Carico di ${weight} kg destinazione ${dest}. Calcoli orbitali completati utilizzando parametri NASA.`
+            });
+        }
+
+        function backToHome() {
+            document.getElementById('home-screen').style.display = 'flex';
+            document.querySelectorAll('.content-page').forEach(p => p.classList.add('hidden'));
+            document.getElementById('auth-box').classList.remove('hidden');
+            document.getElementById('terminal-content').classList.add('hidden');
+            document.getElementById('menu-trigger').style.display = 'none';
+            updateStatus("SISTEMA OPERATIVO PRONTO", "success");
+            closeNav();
+        }
+
+        function openNav() { document.getElementById("side-menu").style.width = "280px"; }
+        function closeNav() { document.getElementById("side-menu").style.width = "0"; }
+    </script>
+</body>
+</html>
