@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MISSION SPACE: Security v4.0 Protocol</title>
+    <style>
+        /* --- STILE IDENTICO AL SITO ORIGINALE --- */
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body { background-color: #000; color: #fff; overflow-x: hidden; }
+
+        /* Sfondo Video */
+        .video-container {
+            position: fixed; top: 0; left: 0;
+            width: 100%; height: 100vh; z-index: -1;
+        }
+        #bg-video { width: 100%; height: 100%; object-fit: cover; }
+        .overlay {
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.85) 100%);
+        }
+
+        /* Status Bar Bassa */
+        #status-container {
+            position: fixed; bottom: 30px; left: 0; width: 100%;
+            display: flex; justify-content: center; z-index: 3000;
+        }
+        #status-bar {
+            min-width: 400px; max-width: 80%; height: 45px;
+            background: #000; border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 50px; display: flex; align-items: center; justify-content: center;
+            padding: 0 30px; font-size: 0.75rem; font-family: 'Consolas', monospace;
+            letter-spacing: 2px; color: #00ffcc;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 15px rgba(0, 212, 255, 0.1);
+        }
+
+        /* Logo */
+        .logo-container { text-align: center; margin-top: 50px; margin-bottom: 30px; }
+        .main-logo-img { width: 100px; border-radius: 20px; box-shadow: 0 0 20px rgba(0, 212, 255, 0.4); }
+        .logo-text { font-size: 2rem; font-weight: 800; text-transform: uppercase; }
+        .logo-text span { color: #00d4ff; }
+
+        /* Contenuto */
+        .container { max-width: 900px; margin: 0 auto; padding: 20px 20px 120px 20px; }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 30px;
+            padding: 40px;
+            margin-bottom: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 { color: #00d4ff; text-transform: uppercase; margin-bottom: 10px; font-size: 1.8rem; text-align: center;}
+        h2 { color: #00d4ff; margin-bottom: 15px; font-size: 1.3rem; text-transform: uppercase; border-bottom: 1px solid rgba(0, 212, 255, 0.2); padding-bottom: 5px; }
+        p { line-height: 1.7; color: #e0e0e0; margin-bottom: 15px; font-size: 1rem; }
+        
+        .highlight { color: #00ffcc; font-weight: bold; }
+        .alert { color: #ff4b2b; font-weight: bold; }
+
+        .back-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: transparent;
+            border: 2px solid #00d4ff;
+            color: #00d4ff;
+            text-decoration: none;
+            border-radius: 12px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+        .back-btn:hover { background: #00d4ff; color: #000; box-shadow: 0 0 20px rgba(0, 212, 255, 0.5); }
+
+        .tech-list { list-style: none; }
+        .tech-list li { margin-bottom: 10px; padding-left: 20px; position: relative; font-size: 0.95rem; }
+        .tech-list li::before { content: ">"; position: absolute; left: 0; color: #00ffcc; }
+
+    </style>
+</head>
+<body>
+
+    <div class="video-container">
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="immagini/sfondo.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+    </div>
+
+    <div class="container">
+        <div class="logo-container">
+            <img src="immagini/logo.jpg" alt="Logo" class="main-logo-img">
+            <div class="logo-text">MISSION SPACE<span>: security4.0</span></div>
+        </div>
+
+        <section class="glass-card">
+            <h1>Protocollo Sicurezza e Privacy</h1>
+            <p style="text-align: center; font-style: italic;">Aggiornamento v4.0 - Sistemi di protezione orbitale attivi</p>
+        </section>
+
+        <section class="glass-card">
+            <h2>1. Trattamento Email e Identità</h2>
+            <p>La tua sicurezza è la nostra priorità assoluta. Il sistema <span class="highlight">MISSION SPACE</span> adotta una politica di tolleranza zero verso l'uso improprio dei dati:</p>
+            <ul class="tech-list">
+                <li><span class="alert">NO SPAM:</span> L'indirizzo email inserito nel terminale non verrà MAI utilizzato per l'invio di materiale pubblicitario, newsletter non richieste o spam.</li>
+                <li><span class="highlight">SESSIONE TEMPORANEA:</span> L'email non viene memorizzata in database permanenti. Una volta terminata la sessione e <span class="alert">usciti dal sito</span>, ogni record identificativo viene rimosso dai log attivi del server.</li>
+                <li><span class="highlight">CRITTOGRAFIA END-TO-END:</span> I dati inseriti viaggiano su tunnel criptati HTTPS con certificazione SSL 3.0.</li>
+            </ul>
+        </section>
+
+        <section class="glass-card">
+            <h2>2. Protocolli Security v4.0</h2>
+            <p>Il nuovo aggiornamento v4.0 introduce misure di sicurezza avanzate per la protezione delle interrogazioni NASA:</p>
+            <ul class="tech-list">
+                <li><strong>Dynamic API Masking:</strong> Le chiavi API sono protette da un layer di offuscamento dinamico per impedire il tracciamento delle query.</li>
+                <li><strong>Zero-Log Policy:</strong> Le richieste inviate ai database NEO, DONKI ed EONET non contengono metadati riconducibili all'identità fisica dell'operatore.</li>
+                <li><strong>Anti-Intercept Shield:</strong> Ogni report inviato tramite EmailJS utilizza template pre-approvati che filtrano automaticamente script malevoli o tentativi di injection.</li>
+            </ul>
+        </section>
+
+        <section class="glass-card">
+            <h2>3. Responsabilità dell'Operatore</h2>
+            <p>Sebbene il sistema garantisca la massima riservatezza, l'operatore è responsabile dell'accuratezza dell'indirizzo email inserito per la ricezione dei bollettini spaziali. In caso di disconnessione improvvisa del satellite (visibile nel footer del sito principale), la sessione verrà terminata istantaneamente per prevenire fughe di dati.</p>
+        </section>
+
+        <div style="text-align: center;">
+            <a href="Esplorazione.html" class="back-btn">Torna al Terminale</a>
+        </div>
+    </div>
+
+    <div id="status-container">
+        <div id="status-bar">PROTEZIONE DATI ATTIVA: CRITTOGRAFIA V4.0 ESEGUITA</div>
+    </div>
+
+</body>
+</html>
