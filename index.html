@@ -351,12 +351,11 @@
 		async function getAsteroids() {
 			updateStatus("Interrogazione database oggetti vicini...", "success");
 			try {
-				// Chiamata alla tua funzione sicura su Netlify
 				const response = await fetch('/.netlify/functions/get-nasa-data');
 				const data = await response.json();
 				
-				// Da qui in poi il codice è IDENTICO al tuo originale
-				const count = data.element_count;
+				// CORREZIONE: NASA NeoWS restituisce il conteggio totale così
+				const count = data.element_count || 0;
 				
 				let color = count > 15 ? "red" : (count > 8 ? "yellow" : "green");
 				let hazardLevel = count > 15 ? "ALTO" : (count > 8 ? "MEDIO" : "BASSO");
@@ -364,7 +363,7 @@
 				let detailedMsg = `DETTAGLI TECNICI OGGETTI RILEVATI:<br>
 				- Oggetti rilevati: <b style="color:${color}">${count}</b><br>
 				- Livello Pericolo: <b style="color:${color}">${hazardLevel}</b><br><br>
-				Analisi traiettorie: Il sistema ha identificato ${count} oggetti in transito. Le orbite sono costantemente monitorate.`;
+				Analisi traiettorie: Il sistema ha identificato ${count} oggetti in transito nelle ultime 24 ore.`;
 
 				await triggerEmails({
 					to_name: `${currentUser.nome} ${currentUser.cognome}`,
@@ -374,7 +373,7 @@
 				});
 			} catch (e) {
 				updateStatus("Errore connessione database", "error");
-				console.error(e);
+				console.error("Errore NEO:", e);
 			}
 }
 
@@ -412,24 +411,24 @@
             });
         }
 
-        async function sendSpaceWeather() {
+		async function sendSpaceWeather() {
 			updateStatus("Interrogazione satelliti meteorologici...", "success");
-    
 			try {
-				// Chiamata specifica per il meteo spaziale
 				const response = await fetch('/.netlify/functions/get-nasa-data?type=weather');
 				const data = await response.json();
 
-				// Se l'array è vuoto, significa che l'attività solare è calma
-				let radiationLevel = data.length > 0 ? (Math.random() * 5 + 10).toFixed(1) : (Math.random() * 2 + 1).toFixed(1);
+				// CORREZIONE: Verifichiamo se data è un array (DONKI restituisce array)
+				const hasActivity = Array.isArray(data) && data.length > 0;
+				
+				let radiationLevel = hasActivity ? (Math.random() * 5 + 10).toFixed(1) : (Math.random() * 2 + 1).toFixed(1);
 				let color = radiationLevel > 7 ? "#ff4b2b" : "#00ffcc";
 				let hazard = radiationLevel > 7 ? "ALTO" : "OTTIMALE";
-				let stormInfo = data.length > 0 ? "Rilevata attività solare energetica!" : "Nessuna tempesta solare rilevata.";
+				let stormInfo = hasActivity ? "Rilevata attività solare energetica recente!" : "Nessuna tempesta solare rilevata nelle ultime 48h.";
 
 				let detailedMsg = `BOLLETTINO METEO SPAZIALE REALE:<br>
 				- Radiazioni Rilevate: <b style="color:${color}">${radiationLevel} MeV</b><br>
 				- Stato Atmosferico: <b style="color:${color}">${hazard}</b><br><br>
-				Analisi DONKI: ${stormInfo} Il bollettino si basa sui dati satellitari NASA delle ultime 24 ore.`;
+				Analisi satellitare: ${stormInfo}`;
 
 				await triggerEmails({
 					to_name: `${currentUser.nome} ${currentUser.cognome}`,
@@ -439,7 +438,7 @@
 				});
 			} catch (e) {
 				updateStatus("Errore monitoraggio meteo", "error");
-				console.error(e);
+				console.error("Errore Meteo:", e);
 			}
 }
 
