@@ -8,7 +8,7 @@ body { background-color: #000; color: #fff; overflow-x: hidden; }
 
 /* Status Bar */
 #status-container {
-    position: fixed; bottom: 110px; left: 0; width: 100%; /* Alzata per non coprire il footer */
+    position: fixed; bottom: 130px; left: 0; width: 100%; /* Alzata per non coprire il footer */
     display: flex; justify-content: center; z-index: 3000;
 }
 
