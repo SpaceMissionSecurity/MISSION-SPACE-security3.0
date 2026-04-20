@@ -150,3 +150,69 @@ button {
         max-width: 100%;
     }
 }
+
+/* Integrazioni per Sezione Tecnica */
+article ul {
+    margin-left: 20px;
+    margin-top: 10px;
+    list-style-type: square;
+    color: #aaa;
+}
+
+article ul li {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+article ul li strong {
+    color: #00d4ff;
+}
+
+/* Miglioramento visivo per i nuovi pulsanti del terminale */
+#terminal-content .glass-card p {
+    font-size: 0.85rem;
+    color: #ccc;
+    margin-bottom: 15px;
+    font-family: 'Consolas', monospace;
+}
+
+/* Stili per la Nuova Sezione 3D */
+.grid-3d {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card-3d-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card-3d-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.card-3d-item h3 {
+    font-size: 1rem;
+    color: #00d4ff;
+    margin-bottom: 10px;
+}
+
+.img-3d-placeholder {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.card-3d-item p {
+    font-size: 0.8rem;
+    color: #ccc;
+}
